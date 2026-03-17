@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HW1 Grid World – 強化學習</title>
+  <meta name="description" content="互動式網格地圖與策略評估，強化學習作業 HW1。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="bg-gradient"></div>
+
+  <header>
+    <h1>🧩 Grid World</h1>
+    <p class="subtitle">強化學習 HW1 — 網格地圖與策略評估</p>
+  </header>
+
+  <main>
+    <!-- Controls -->
+    <section class="card controls-card">
+      <h2>⚙️ 設定</h2>
+      <div class="controls-row">
+        <label for="nSelect">網格大小 (n)：</label>
+        <select id="nSelect">
+          <option value="5">5 × 5</option>
+          <option value="6">6 × 6</option>
+          <option value="7">7 × 7</option>
+          <option value="8">8 × 8</option>
+          <option value="9">9 × 9</option>
+        </select>
+        
+        <label for="algoSelect" style="margin-left: 1rem;">演算法：</label>
+        <select id="algoSelect">
+          <option value="value_iteration">Value Iteration (最佳策略)</option>
+          <option value="random_policy">Random Policy (隨機策略)</option>
+        </select>
+        
+        <button id="generateBtn" class="btn btn-primary" style="margin-left: 1rem;">生成網格</button>
+        <button id="resetBtn" class="btn btn-secondary" disabled>重置</button>
+      </div>
+
+      <!-- Legend -->
+      <div class="legend">
+        <span class="legend-item"><span class="legend-dot start"></span>起點（第1次點擊）</span>
+        <span class="legend-item"><span class="legend-dot end"></span>終點（第2次點擊）</span>
+        <span class="legend-item"><span class="legend-dot obstacle"></span>障礙物（之後點擊，最多 n-2 個）</span>
+        <span class="legend-item"><span class="legend-dot normal"></span>一般格子</span>
+      </div>
+
+      <!-- Status bar -->
+      <div class="status-bar">
+        <span id="statusMsg">請先生成網格。</span>
+        <span id="obstacleCount"></span>
+      </div>
+    </section>
+
+    <!-- Grid -->
+    <section class="card grid-card">
+      <div id="gridContainer"></div>
+    </section>
+
+    <!-- Evaluate button -->
+    <section class="card action-card">
+      <button id="evaluateBtn" class="btn btn-evaluate" disabled>
+        🔍 評估策略 &amp; 計算 V(s)
+      </button>
+      <p class="hint">需先設定起點與終點後才能評估。</p>
+    </section>
+
+    <!-- Results info -->
+    <section class="card info-card" id="infoCard" style="display:none">
+      <h2>📊 結果說明</h2>
+      <ul>
+        <li>每個格子顯示隨機分配的行動（↑↓←→）。</li>
+        <li>下方數字為策略評估後的狀態價值 <strong>V(s)</strong>（折扣因子 γ=1）。</li>
+        <li>終點格 V(s)=0；障礙物格以斜線標示。</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>國立中興大學 · 強化學習 · HW1</p>
+  </footer>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

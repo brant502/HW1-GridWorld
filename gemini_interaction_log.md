@@ -30,3 +30,6 @@
 **Action taken:**
 - Created `readme.txt` to explain project structure and setup.
 - Initialized local Git repository, committed codebase, added GitHub remote `https://github.com/brant502/HW1-GridWorld.git`, and pushed the branch to remote `main`.
+
+<img width="499" height="583" alt="螢幕擷取畫面 2026-03-18 013853" src="https://github.com/user-attachments/assets/58a93e26-d6bd-4f42-bb8e-46cc5d6dac37" />
+

@@ -28,3 +28,4 @@ How to Run:
 2. Install dependencies: `pip install -r requirements.txt` (Mainly Flask and Numpy).
 3. Start the server: `python app.py`
 4. Open the displayed local server address (usually http://127.0.0.1:5000) in your web browser.
+<img width="499" height="583" alt="螢幕擷取畫面 2026-03-18 013853" src="https://github.com/user-attachments/assets/58a93e26-d6bd-4f42-bb8e-46cc5d6dac37" />
